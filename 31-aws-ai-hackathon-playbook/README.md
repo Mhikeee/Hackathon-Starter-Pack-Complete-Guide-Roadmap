@@ -1,5 +1,7 @@
 # Section 31: AWS AI Hackathon Playbook (for teams who can't code)
 
+> **New here? Open [start-here.md](start-here.md) first.** It gets your team building tonight and splits the work.
+>
 > Built for the **RELX | Reed Elsevier Philippines AI Hackathon 2026, "Ideas to Impact: Building the Future with AI"** (Oct 2, 2026, U.P. Ayala Land Technohub, Quezon City). It also works for any one-day hackathon where the challenge is revealed on the day, AWS tools are provided, and nobody on the team codes.
 
 ---
@@ -59,7 +61,7 @@ Everyone presents. The Pitch lead opens and closes, the Builder runs the demo, a
 
 | When | Do this |
 |---|---|
-| **Wed (today)** | Read this section (30 min each). Each person signs in to PartyRock and does the 45-min warm-up in [practice/mock-hackathon.md](practice/mock-hackathon.md). Print the waivers and get them signed. Confirm each member has a bank account. |
+| **Wed (today)** | Start with [start-here.md](start-here.md): pick roles and do your first build together on a call. Read this section (30 min each). Each person signs in to PartyRock and does the 45-min warm-up in [practice/mock-hackathon.md](practice/mock-hackathon.md). Print the waivers and get them signed. Confirm each member has a bank account. |
 | **Thu (Oct 1)** | Pick up the laptops. Run the **full 3-hour mock hackathon** in [practice/mock-hackathon.md](practice/mock-hackathon.md) as a team, then rehearse the pitch once with a timer. Build your slide *template* (title, problem, user, demo, impact, roadmap, team) so Friday you only fill it in. Print [templates/day-of-card.md](templates/day-of-card.md). Sleep 7+ hours. |
 | **Fri (Oct 2)** | Follow the minute-by-minute plan below. |
 
@@ -115,6 +117,7 @@ Anything under 40 out of 65: pick another idea. The CLI version for practice is 
 
 | File | Use it for |
 |---|---|
+| [start-here.md](start-here.md) | **Read first:** pick roles, first build tonight, who does what Wed → Fri |
 | [aws-no-code-guide.md](aws-no-code-guide.md) | What AWS tools you might get and how to build with each, without code |
 | [idea-bank.md](idea-bank.md) | 10 pre-built idea shells + the 20-minute adapt method |
 | [prompts.md](prompts.md) | Copy-paste prompts for brainstorming, building, testing, and pitching |
