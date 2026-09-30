@@ -48,6 +48,10 @@
 - [x] Engineering: tools/check-links.py (53 links OK), .github/workflows/checks.yml CI, fastapi-supabase starter, removed 694K duplicate banner, fixed .gitignore contradiction
 - [x] ROADMAP stats corrected below
 
+## Phase 4.5, Event Playbooks (Done 2026-09-30)
+- [x] New Section 31: AWS AI Hackathon Playbook: no-code (PartyRock/Bedrock) strategy for a one-day, challenge-on-the-day AI hackathon, idea bank, prompts, 15-min pitch template, day-of card, timed mock hackathon
+- [x] `pitch-timer.py --target-minutes N` for long pitch slots (+ CI smoke test); fixed minutes-labelled-as-seconds output
+
 ## Phase 5, Community & Growth (Future)
 - [ ] Discord server setup
 - [ ] Monthly newsletter template
@@ -63,7 +67,7 @@
 
 | Metric | Value |
 |---|---|
-| Total sections | 30 |
+| Total sections | 31 |
 | Total files | ~370 (72 markdown) |
 | Total markdown lines | ~19,800+ |
 | Templates (md in `*/templates/`) | 16 |

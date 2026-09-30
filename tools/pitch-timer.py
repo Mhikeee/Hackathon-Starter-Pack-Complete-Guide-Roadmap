@@ -6,19 +6,22 @@ Usage:
     python3 pitch-timer.py                        Interactive mode (paste text)
     python3 pitch-timer.py --file pitch.txt       Analyze from file
     echo "Your pitch text" | python3 pitch-timer.py   Analyze from stdin
+    python3 pitch-timer.py --file pitch.txt --target-minutes 10
+                                                  Check against a custom length
 
 Targets:
     30-second pitch: 75-90 words
     60-second pitch: 150-180 words
     2-minute pitch: 300-360 words
     3-minute pitch: 450-540 words
+    N-minute pitch (--target-minutes N): N*130 to N*160 words
 """
 
 import sys
 import re
 
 
-def analyze_text(text):
+def analyze_text(text, target_minutes=None):
     """Analyze pitch text for timing and pacing."""
     words = text.split()
     word_count = len(words)
@@ -49,7 +52,12 @@ def analyze_text(text):
     long_word_pct = (long_words / max(word_count, 1)) * 100
 
     # Determine target
-    if word_count <= 90:
+    if target_minutes:
+        low, high = int(target_minutes * 130), int(target_minutes * 160)
+        target = f"{target_minutes:g}-minute pitch"
+        target_range = f"{low}-{high} words"
+        in_range = low <= word_count <= high
+    elif word_count <= 90:
         target = "30-second pitch"
         target_range = "75-90 words"
         in_range = 75 <= word_count <= 90
@@ -91,9 +99,9 @@ def analyze_text(text):
         print(f"  ⚠️  Status:         Outside target range")
 
     print(f"\n  ⏱️  Estimated Time:")
-    print(f"     Fast pace:      {time_fast:.1f} seconds ({time_fast*60:.0f}s)")
-    print(f"     Conversational: {time_conversational:.1f} seconds ({time_conversational*60:.0f}s)")
-    print(f"     Slow pace:      {time_slow:.1f} seconds ({time_slow*60:.0f}s)")
+    print(f"     Fast pace:      {time_fast:.1f} minutes ({time_fast*60:.0f}s)")
+    print(f"     Conversational: {time_conversational:.1f} minutes ({time_conversational*60:.0f}s)")
+    print(f"     Slow pace:      {time_slow:.1f} minutes ({time_slow*60:.0f}s)")
 
     print(f"\n  📊 Structure:")
     print(f"     Sentences:      {sentence_count}")
@@ -105,7 +113,12 @@ def analyze_text(text):
 
     # Tips
     print(f"\n  💡 Tips:")
-    if not in_range:
+    if not in_range and target_minutes:
+        if word_count < int(target_minutes * 130):
+            print(f"     - Too short for {target_minutes:g} min: add a user story or demo narration")
+        else:
+            print(f"     - Too long for {target_minutes:g} min: cut features, keep 1-2 core ones")
+    elif not in_range:
         if word_count < 75:
             print(f"     - Add more detail to your problem statement")
             print(f"     - Include a specific example or story")
@@ -135,13 +148,30 @@ def analyze_text(text):
 
 def main():
     text = None
+    args = sys.argv[1:]
 
-    if len(sys.argv) > 2 and sys.argv[1] == "--file":
+    if "-h" in args or "--help" in args:
+        print(__doc__)
+        return
+
+    target_minutes = None
+    if "--target-minutes" in args:
+        i = args.index("--target-minutes")
         try:
-            with open(sys.argv[2], "r") as f:
+            target_minutes = float(args[i + 1])
+            if target_minutes <= 0:
+                raise ValueError
+        except (IndexError, ValueError):
+            print("  --target-minutes needs a positive number, e.g. --target-minutes 10")
+            sys.exit(2)
+        del args[i:i + 2]
+
+    if len(args) > 1 and args[0] == "--file":
+        try:
+            with open(args[1], "r") as f:
                 text = f.read()
         except FileNotFoundError:
-            print(f"  File not found: {sys.argv[2]}")
+            print(f"  File not found: {args[1]}")
             return
     elif not sys.stdin.isatty():
         text = sys.stdin.read()
@@ -168,7 +198,7 @@ def main():
         print("  No text provided.")
         return
 
-    analyze_text(text.strip())
+    analyze_text(text.strip(), target_minutes)
 
 
 if __name__ == "__main__":

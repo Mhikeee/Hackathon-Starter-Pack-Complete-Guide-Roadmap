@@ -79,6 +79,9 @@ python3 tools/pitch-timer.py --file my-pitch.txt
 
 # From clipboard
 cat pitch.txt | python3 tools/pitch-timer.py
+
+# Long pitch (e.g. a 15-min slot where you talk for ~10 min)
+python3 tools/pitch-timer.py --file my-pitch.txt --target-minutes 10
 ```
 
 **Targets:**
@@ -86,6 +89,7 @@ cat pitch.txt | python3 tools/pitch-timer.py
 - 60-second pitch: 150-180 words
 - 2-minute pitch: 300-360 words
 - 3-minute pitch: 450-540 words
+- Any length with `--target-minutes N`: N×130 to N×160 words
 
 ### 🔎 api-finder.py
 

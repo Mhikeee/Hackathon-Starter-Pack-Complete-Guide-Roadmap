@@ -27,7 +27,7 @@
   <img alt="templates" src="https://img.shields.io/badge/16_Templates-📋-blue?style=flat-square">
   <img alt="apis" src="https://img.shields.io/badge/40%2B_APIs-🔌-green?style=flat-square">
   <img alt="resources" src="https://img.shields.io/badge/130%2B_Curated_Links-📚-orange?style=flat-square">
-  <img alt="sections" src="https://img.shields.io/badge/30_Complete_Sections-🗂️-red?style=flat-square">
+  <img alt="sections" src="https://img.shields.io/badge/31_Complete_Sections-🗂️-red?style=flat-square">
 </p>
 
 <p align="center">
@@ -135,6 +135,7 @@ flowchart LR
 | 28 | [Testing at Hackathons](28-testing-at-hackathons/README.md) | Quick QA, demo data, "works on my machine" prevention | 8 min | 🟢 |
 | 29 | [Storytelling](29-storytelling/README.md) | Narrative frameworks, emotional arc, demo moments | 12 min | 🔴 |
 | 30 | [Monetization](30-monetization/README.md) | MVP to startup, pricing, investors, accelerators | 10 min | 🟡 |
+| 31 | [AWS AI Hackathon Playbook](31-aws-ai-hackathon-playbook/README.md) | No-code AWS/PartyRock plan for a one-day AI hackathon + timed mock practice | 30 min | 🟢 |
 
 ---
 
@@ -309,6 +310,8 @@ flowchart LR
 **Estimated time:** 2-3 hours of reading + practice
 **Outcome:** You'll know exactly what to do at every stage of your first hackathon.
 
+**Hackathon in a few days and nobody codes?** Skip straight to [31 AWS AI Hackathon Playbook](31-aws-ai-hackathon-playbook/README.md) and run its mock hackathon.
+
 ---
 
 ### Path B: I Want to Win
@@ -350,6 +353,8 @@ flowchart LR
 
 **Estimated time:** 1-2 hours of reading
 **Outcome:** You'll understand your role, how to add value, and how to leverage the experience for your career.
+
+**Whole team non-coders?** [31 AWS AI Hackathon Playbook](31-aws-ai-hackathon-playbook/README.md) shows how to build a working AI app with no code (AWS PartyRock) and practice under real time pressure.
 
 ---
 
